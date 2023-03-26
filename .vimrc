@@ -64,3 +64,9 @@ call ddc#custom#patch_global('sourceOptions', {
 call ddc#enable()
 
 
+set completeopt=menuone,noinsert
+" 補完表示時のEnterで改行をしない
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+inoremap <silent> nn <ESC>
